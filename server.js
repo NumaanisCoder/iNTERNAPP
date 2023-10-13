@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended: true}));
 app.get('/', (req,res)=>{
     res.json({
         message: "Server is ON ;)"
-    });
+    }); 
 })
 app.use('/api/v1',userRouter);
 app.use('/api/v2',photoRouter);
