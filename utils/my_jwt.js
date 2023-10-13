@@ -11,4 +11,8 @@ module.exports.getOTPToken = (otp) => {
 const token = jwt.sign({id: '64fa097d88927d2359098233'},'IDONTKNOWWHATWILLBETHEPASSWORDBYNQ');
 console.log(token);
 
+module.exports.getID = (token) => {
+  return jwt.verify(token,process.env.JWT_KEY);
+}
+
 

@@ -14,7 +14,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    Avatar:{
+    image:{
         type: String,
         required: false
     },
@@ -24,11 +24,14 @@ const userSchema = new Schema({
     },
     post:{
         photos:[
-            {type: mongoose.Types.ObjectId}
+            {type: mongoose.Types.ObjectId, ref:"PHOTO"}
         ],
         text:[
-            {type: mongoose.Types.ObjectId}
+            {type: mongoose.Types.ObjectId, ref:"TEXT"}
         ]
+    },
+    otp: {
+        type: Number
     }
 })
 

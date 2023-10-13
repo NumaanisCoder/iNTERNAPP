@@ -3,10 +3,19 @@ const  userRouter  = require('./routes/userRoute');
 const photoRouter = require('./routes/photosRoute')
 const textRouter = require('./routes/textRoute');
 const { DBConnection } = require('./DB/DBConnection');
+const cors = require('cors');
 const app = express();
 require('dotenv').config({path:'./config/.env'});
 
 DBConnection();
+
+const urlSupported = ['http://localhost:3000', 'http://localhost:3001'];
+   
+app.use(cors({
+    origin: urlSupported,
+    credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
