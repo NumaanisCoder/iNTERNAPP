@@ -19,15 +19,15 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', (req,res)=>{
-    res.json({
-        message: "Server is ON ;)"
-    }); 
-})
 app.use('/api/v1',userRouter);
 app.use('/api/v2',photoRouter);
 app.use('/api/v3',textRouter);
 
+app.get('/', (req,res)=>{
+    res.status(200).json({
+        message: "Server is ON ;)"
+    }); 
+})
 
 app.use((err,req,res,next)=>{
     const {status, message} = err;
