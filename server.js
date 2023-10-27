@@ -9,7 +9,7 @@ require('dotenv').config({path:'./config/.env'});
 
 DBConnection();
 
-const urlSupported = ['http://localhost:3000', 'http://localhost:3001','https://picosphere.netlify.app'];
+const urlSupported = ['http://localhost:3000', 'http://localhost:3001','https://picosphere.netlify.app','http://192.168.1.13:3000'];
    
 app.use(cors({
     origin: urlSupported,
